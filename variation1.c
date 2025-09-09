@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <conio.h>
 #define MAX 10
 typedef struct{
     int elem[MAX];
@@ -23,6 +24,7 @@ int main(){
 	    
 	    switch(choice){
 	    	case 1:
+                printf("Enter data: "); scanf("%d", &data);
 	    		L = insertPos(L, data, position);
 				break;
 			case 2:
@@ -32,7 +34,7 @@ int main(){
 				position = locate(L, data);
 				if(position != -1) printf("Data found in Position %d", position);
 				else printf("Data not found");
-				getch("");
+				getchar();
 				break;
 			case 4:
 				L = insertSorted(L, data);
@@ -66,15 +68,12 @@ List insertPos(List L, int data, int position){
         return L;
     }
 
-    printf("Enter data: "); scanf("%d", &data);
     int i;
-    for(i = MAX-1; i >= 0; i--){
+    for(i = L.count; i >= 0; i--){
         L.elem[i] = L.elem[i-1];
-        if(i == position-1){
-            L.elem[i] = data;
-            break;
         }
-    }
+    
+    L.elem[position] = data;
     L.count++;
     return L;
 }
@@ -132,7 +131,6 @@ List insertSorted(List L, int data){
 }
 
 void display(List L){
-	system("cls");
 	printf("[");
 	int i;
 	for(i=0; i<MAX; i++){
