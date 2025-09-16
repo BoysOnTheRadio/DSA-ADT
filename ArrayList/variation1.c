@@ -68,8 +68,8 @@ List insertPos(List L, int data, int position){
         return L;
     }
 
-    int i;
-    for(i = L.count; i >= 0; i--){
+    
+    for(int i = L.count; i >= position; i--){
         L.elem[i] = L.elem[i-1];
         }
     
@@ -85,9 +85,9 @@ List deletePos(List L, int position){
         return L;
     }
 
-    int i;
-    for(i = 0; i < MAX; i++){
-        if(i >= position-1 && i != MAX-1){
+
+    for(int i = 0; i < L.count; i++){
+        if(i >= position && i != MAX-1){
         	L.elem[i] = L.elem[i+1];
 		}
     }

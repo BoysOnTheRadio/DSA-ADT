@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Projects/DSA-ADT",
-      "program": "c:/Projects/DSA-ADT/build/Debug/outDebug",
+      "cwd": "c:/Projects/DSA-ADT/ArrayList",
+      "program": "c:/Projects/DSA-ADT/ArrayList/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
