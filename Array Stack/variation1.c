@@ -19,36 +19,20 @@ int top(Stack *s);
 void display(Stack* s);
 
 int main(){
-    int data, position;
-    initialize();
-    int choice = 1;
-    while(choice != 0){
-    	printf("Select Operation\n1. Insert Position\n2. Delete Position\n3. Locate\n4. Insert Sorted\nSelect Choice(0 to Exit): "); scanf("%d", &choice);
-	    
-	    switch(choice){
-	    	case 1:
-                printf("Enter data: "); scanf("%d", &data);
-	    		insertPos(L, data, position);
-				break;
-			case 2:
-				deletePos(L, position);
-				break;
-			case 3:
-				position = locate(L, data);
-				if(position != -1) printf("Data found in Position %d", position);
-				else printf("Data not found");
-				getchar();
-				break;
-			case 4:
-				insertSorted(L, data);
-				break;
-			default:
-				printf("Invalid Choice.");
-				break;
-		}
-	}
-	return 0;
+    Stack * s = initialize();
+    push(s, 5);
+    printf("\n%d data\n", s->items[0]);
+    push(s, 10);
+        printf("\n%d data\n", s->items[1]);
+    push(s, 15);
+
+    push(s, 20);
+    display(s);
+    int num = pop(s);
+    num = pop(s);
+    display(s);
 }
+
 
 Stack *initialize(){
     Stack* s = (Stack*)malloc(sizeof(Stack));

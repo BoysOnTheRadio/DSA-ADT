@@ -54,7 +54,7 @@ void deallocSpace(VHeap *V, int index){
     V->H[index].next = V->avail;
     V->avail = index;
 
-}
+} 
 
 void insertFirst(int *L, VHeap *V, int elem){
     int newCell = allocSpace(V);
